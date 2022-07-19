@@ -1,0 +1,2 @@
+# dummyAppProject
+dummy ionic app

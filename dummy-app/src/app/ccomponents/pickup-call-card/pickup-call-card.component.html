@@ -1,0 +1,31 @@
+<ion-card>
+  <!-- HEADER IF statment  -->
+  <ng-content select="[header]"></ng-content>
+<!-- %%%%%%%%%%%%%%%%%%%% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <ion-card-content>
+    <ion-item lines="none">
+      <!-- %%%%%%%%%%%%%%%%%%%% ICons %%%%%%%%%%%%%%%%%%%%%%%%% -->
+        <ion-icon *ngIf="Status=='On hold'" name="hourglass-outline" slot="start" color="warning"></ion-icon>
+        <ion-icon *ngIf="Status=='Processing'"  name="archive-outline" slot="start" color="secondary"></ion-icon>
+        <ion-icon *ngIf="Status=='Finished'"  name="checkmark-circle-outline" slot="start" color="primary"></ion-icon>
+       <!-- %%%%%%%%%%%%%%%%%%%% ICons %%%%%%%%%%%%%%%%%%%%%%%%% -->
+        <ion-label>{{Status}} <p>{{UpdatedAt}}</p></ion-label>
+    </ion-item>
+  </ion-card-content>
+
+<!-- %%%%%%%%%%%%%%%%%%%CREATED DAAET %%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <ion-item lines="none">
+    <ion-label>
+      <p>created at {{Created}}</p>
+      <p *ngIf="Note"> Notes:{{Note}}</p>
+    </ion-label>
+  </ion-item>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% --> 
+  <ion-item *ngIf="Status=='Finished'" lines="none">
+    <ion-icon name="trophy" slot="start" color="success"></ion-icon>
+    <ion-label color="success">${{Value}}</ion-label>
+  </ion-item>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% --> 
+<!-- IF statment  -->
+<ng-content select="[footer]"></ng-content>
+</ion-card>

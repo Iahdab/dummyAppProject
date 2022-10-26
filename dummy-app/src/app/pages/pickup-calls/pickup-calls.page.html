@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Pickup Calls</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%  CARD   1 on hold %%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <app-pickup-call-card Status="On hold" UpdateAt="08/08/2022 20:53:00" Created="21/04/2021" 
+  Note="we have two bags that are full. one with plastic and the other one with glass"> </app-pickup-call-card>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%  CARD  2 on proccisning %%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <app-pickup-call-card Status="Processing" UpdateAt="08/08/2022 20:00:00" Created="21/04/2021" 
+  Note=" we have two bags that are full." > </app-pickup-call-card>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%  CARD   3 on finished %%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <app-pickup-call-card Status="Finished" UpdateAt="08/08/2022 09:30:00" Created="21/04/2021" Value="15,00"> </app-pickup-call-card>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+</ion-content>

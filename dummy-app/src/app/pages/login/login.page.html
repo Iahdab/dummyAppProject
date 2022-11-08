@@ -20,8 +20,8 @@
           <!-- <pre> dirty?{{f.controls.email?.dirty }}</pre> -->
           <!-- <pre> touched{{f.controls.email?.touched}}</pre> -->
           <ion-button color="dark" fill="clear" size="full">forget email/password?</ion-button>
-          <ion-button color="success" size="full" type="submit" >Login</ion-button>
-          <ion-button color="success" size="full" fill="clear">Register</ion-button>
+          <ion-button color="success" size="full" (click)="login()">Login</ion-button>
+          <ion-button color="success" size="full" fill="clear" (click)="register()">Register</ion-button>
           <!-- <pre>{{f.value | json }}</pre> -->
 
 

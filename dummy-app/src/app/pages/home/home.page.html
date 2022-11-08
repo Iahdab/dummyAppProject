@@ -24,11 +24,11 @@
 <app-pickup-call-card Status="On hold" UpdateAt="08/08/2022 20:53:00" Created="21/04/2021" 
   Note="we have two bags that are full. one with plastic and the other one with glasses">
   <ion-card-header header><ion-card-subtitle>last Pickup Call</ion-card-subtitle></ion-card-header>
-  <ion-button  color="success" fill="clear" size="full" footer> See All..</ion-button>
+  <ion-button  color="success" fill="clear" size="full" footer (click)="goToPickupCalls()"> See All..</ion-button>
 </app-pickup-call-card>
   <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% --> 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button color="success">
+  <ion-fab-button color="success" (click)="newPickupCall()">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>

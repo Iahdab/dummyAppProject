@@ -14,12 +14,9 @@ export class LoaderPage implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.router.navigate(['login']);
-    }, 3000);
+    setTimeout(() => { this.router.navigate(['login']);},1000);
     console.log("here is the loader page OnInit");
-    
-    
+
   }
 
 }

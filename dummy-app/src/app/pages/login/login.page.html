@@ -1,33 +1,35 @@
 <ion-content>
   <div class="flex-center">
+    <form [formGroup]="form">
     <ion-card>
       <ion-card-header>
         <ion-card-title color="success">Reciclica</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <form #f="ngForm"novalidate >
+        <!-- in line 8 <form #f="ngForm"novalidate >   in line 25</form>-->
           <ion-item>
             <ion-label position="floating">Email</ion-label>
-            <ion-input type="email" name="email"  required pattern="[^  @]*@[^ @]*" ></ion-input>
+            <ion-input type="email" formControlName="email" ></ion-input>
           </ion-item>
-
+          <app-error-message message="Email is mandatory" [field]="form.get('email')" error="required"></app-error-message>
+          <app-error-message message="Email is invalid" [field]="form.get('email')" error="email"></app-error-message>
+        
 
           <ion-item>
             <ion-label position="floating">Password</ion-label>
-            <ion-input type="Password" name="password" required minlength="8" ></ion-input>
+            <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
+          <app-error-message message="password is mandatory" [field]="form.get('password')" error="required"></app-error-message>
           <!-- <pre> is valid?{{f.controls.email?.valid }}</pre> -->
           <!-- <pre> dirty?{{f.controls.email?.dirty }}</pre> -->
           <!-- <pre> touched{{f.controls.email?.touched}}</pre> -->
-          <ion-button color="dark" fill="clear" size="full">forget email/password?</ion-button>
-          <ion-button color="success" size="full" (click)="login()">Login</ion-button>
-          <ion-button color="success" size="full" fill="clear" (click)="register()">Register</ion-button>
+          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid">forget email/password?</ion-button>
+          <ion-button color="success" size="full" [disabled]="!form.valid" (click)="login()">Login</ion-button>
+          <ion-button color="success" size="full"  fill="clear" (click)="register()">Register</ion-button>
           <!-- <pre>{{f.value | json }}</pre> -->
-
-
-        </form>
       </ion-card-content>
     </ion-card>
+  </form>
   </div>
- 
+
 </ion-content>

@@ -5,11 +5,18 @@
         <ion-list id="inbox-list">
           <ion-list-header>Reciclica</ion-list-header>
           <ion-note>Recycling APP</ion-note>
+          <ion-note>Recycling APsadasdasdaP</ion-note>
 
-                </ion-list>
-
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPage; let i =index">
+            <ion-item routerDirection="root" [routerlink]="[p.url]" lines="none" details="false">
+              <ion-icon slot="start" [ios]="p.icon+'-outline'"[md]="p.icon +'-sharp'"></ion-icon>
+            <ion-label>{{p.title}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
+  <app-loading></app-loading>
 </ion-app>

@@ -23,7 +23,8 @@
           <!-- <pre> is valid?{{f.controls.email?.valid }}</pre> -->
           <!-- <pre> dirty?{{f.controls.email?.dirty }}</pre> -->
           <!-- <pre> touched{{f.controls.email?.touched}}</pre> -->
-          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid">forget email/password?</ion-button>
+          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid"
+          (click)="forgotEmailPassword()" id="recoverPasswordButton">forget email/password?</ion-button>
           <ion-button color="success" size="full" [disabled]="!form.valid" (click)="login()">Login</ion-button>
           <ion-button color="success" size="full"  fill="clear" (click)="register()">Register</ion-button>
           <!-- <pre>{{f.value | json }}</pre> -->
